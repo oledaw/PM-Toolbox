@@ -40,6 +40,11 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     font-size: 14px;
@@ -58,8 +63,12 @@
     gap: 8px;
     position: sticky;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 100;
     box-shadow: 0 1px 0 rgba(0,0,0,.2);
+    overflow: hidden;
   }
 
   .topnav-logo {
@@ -605,8 +614,19 @@
 
   @media (max-width: 900px) {
     .sidebar { display: none; }
-    .main { padding: 16px; }
-    .cards-grid { grid-template-columns: 1fr; }
+    .main { padding: 12px; width: 100%; min-width: 0; }
+    .layout { width: 100%; min-width: 0; }
+    .cards-grid { grid-template-columns: 1fr; min-width: 0; }
+    .card { min-width: 0; }
+    .stats-bar { flex-wrap: wrap; gap: 0; }
+    .stat-item { flex: 1 1 50%; min-width: 0; }
+    .filter-bar { gap: 6px; }
+    .topnav-crumb { display: none; }
+    .topnav-divider { display: none; }
+    .topnav-badge { font-size: 10px; white-space: nowrap; }
+    .page-header { flex-direction: column; gap: 10px; }
+    .header-actions { align-self: flex-end; }
+    .list-table th:nth-child(3), .list-table td:nth-child(3) { display: none; }
   }
 </style>
 </head>
@@ -756,7 +776,7 @@
           <div class="card-footer">
             <span class="card-type-badge badge-decision">📊 Decision</span>
             <a class="open-btn" href="https://oledaw.github.io/projectdashboard/" target="_blank" rel="noopener">
-              Uruchom
+              Uruchom ↗
             </a>
           </div>
         </div>
@@ -785,7 +805,7 @@
           <div class="card-footer">
             <span class="card-type-badge badge-status">✅ Status</span>
             <a class="open-btn" href="https://oledaw.github.io/project-status-dashboard-generator/" target="_blank" rel="noopener">
-              Uruchom
+              Uruchom ↗
             </a>
           </div>
         </div>
@@ -816,7 +836,7 @@
           <div class="card-footer">
             <span class="card-type-badge badge-survey">📝 Ankieta</span>
             <a class="open-btn" href="https://oledaw.github.io/project-predictability-assessment/" target="_blank" rel="noopener">
-              Uruchom
+              Uruchom ↗
             </a>
           </div>
         </div>
@@ -847,7 +867,7 @@
           <div class="card-footer">
             <span class="card-type-badge badge-survey">📝 Ankieta</span>
             <a class="open-btn" href="https://oledaw.github.io/projectweeklystatus/" target="_blank" rel="noopener">
-              Uruchom
+              Uruchom ↗
             </a>
           </div>
         </div>
@@ -877,7 +897,7 @@
           <div class="card-footer">
             <span class="card-type-badge badge-readiness">🚀 Readiness</span>
             <a class="open-btn" href="https://oledaw.github.io/project-readiness-check/" target="_blank" rel="noopener">
-              Uruchom
+              Uruchom ↗
             </a>
           </div>
         </div>
@@ -906,7 +926,7 @@
           <div class="card-footer">
             <span class="card-type-badge badge-register">⚠️ Rejestr</span>
             <a class="open-btn" href="https://oledaw.github.io/riskregister/" target="_blank" rel="noopener">
-              Uruchom
+              Uruchom ↗
             </a>
           </div>
         </div>
@@ -935,7 +955,7 @@
           <div class="card-footer">
             <span class="card-type-badge badge-process">🔗 Proces</span>
             <a class="open-btn" href="https://oledaw.github.io/happy-path-builder/" target="_blank" rel="noopener">
-              Uruchom
+              Uruchom ↗
             </a>
           </div>
         </div>
@@ -967,7 +987,7 @@
             </td>
             <td><span class="card-type-badge badge-decision">📊 Decision</span></td>
             <td style="color:var(--text-secondary);font-size:12px">Strategia · Koszty · ROI · Portfolio</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/projectdashboard/" target="_blank" rel="noopener">Uruchom</a></td>
+            <td><a class="open-btn" href="https://oledaw.github.io/projectdashboard/" target="_blank" rel="noopener">Uruchom ↗</a></td>
           </tr>
           <tr data-category="status" data-type="dashboard" data-title="Project Summary Dashboard">
             <td>
@@ -981,7 +1001,7 @@
             </td>
             <td><span class="card-type-badge badge-status">✅ Status</span></td>
             <td style="color:var(--text-secondary);font-size:12px">RAG Status · Trend · Ryzyka · Daty</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/project-status-dashboard-generator/" target="_blank" rel="noopener">Uruchom</a></td>
+            <td><a class="open-btn" href="https://oledaw.github.io/project-status-dashboard-generator/" target="_blank" rel="noopener">Uruchom ↗</a></td>
           </tr>
           <tr data-category="assessment" data-type="survey" data-title="Ankieta oceny nieprzewidywalności projektu">
             <td>
@@ -995,7 +1015,7 @@
             </td>
             <td><span class="card-type-badge badge-survey">📝 Ankieta</span></td>
             <td style="color:var(--text-secondary);font-size:12px">Zakres · Tech · Zależności · Zespół</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/project-predictability-assessment/" target="_blank" rel="noopener">Uruchom</a></td>
+            <td><a class="open-btn" href="https://oledaw.github.io/project-predictability-assessment/" target="_blank" rel="noopener">Uruchom ↗</a></td>
           </tr>
           <tr data-category="status" data-type="survey" data-title="Ankieta Status tygodniowy projektu">
             <td>
@@ -1009,7 +1029,7 @@
             </td>
             <td><span class="card-type-badge badge-survey">📝 Ankieta</span></td>
             <td style="color:var(--text-secondary);font-size:12px">Postęp · Zakres · Ryzyka · Zespół</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/projectweeklystatus/" target="_blank" rel="noopener">Uruchom</a></td>
+            <td><a class="open-btn" href="https://oledaw.github.io/projectweeklystatus/" target="_blank" rel="noopener">Uruchom ↗</a></td>
           </tr>
           <tr data-category="assessment" data-type="dashboard" data-title="Project Readiness Assessment">
             <td>
@@ -1023,7 +1043,7 @@
             </td>
             <td><span class="card-type-badge badge-readiness">🚀 Readiness</span></td>
             <td style="color:var(--text-secondary);font-size:12px">Strategia · Zakres · Governance · Plan</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/project-readiness-check/" target="_blank" rel="noopener">Uruchom</a></td>
+            <td><a class="open-btn" href="https://oledaw.github.io/project-readiness-check/" target="_blank" rel="noopener">Uruchom ↗</a></td>
           </tr>
           <tr data-category="risk" data-type="register" data-title="Risk Register">
             <td>
@@ -1037,7 +1057,7 @@
             </td>
             <td><span class="card-type-badge badge-register">⚠️ Rejestr</span></td>
             <td style="color:var(--text-secondary);font-size:12px">Ryzyko · Mitygacja · Konsekwencje</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/riskregister/" target="_blank" rel="noopener">Uruchom</a></td>
+            <td><a class="open-btn" href="https://oledaw.github.io/riskregister/" target="_blank" rel="noopener">Uruchom ↗</a></td>
           </tr>
           <tr data-category="process" data-type="register" data-title="Happy Path Builder">
             <td>
@@ -1051,7 +1071,7 @@
             </td>
             <td><span class="card-type-badge badge-process">🔗 Proces</span></td>
             <td style="color:var(--text-secondary);font-size:12px">Aktorzy · Rezultaty · Proces</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/happy-path-builder/" target="_blank" rel="noopener">Uruchom</a></td>
+            <td><a class="open-btn" href="https://oledaw.github.io/happy-path-builder/" target="_blank" rel="noopener">Uruchom ↗</a></td>
           </tr>
         </tbody>
       </table>
