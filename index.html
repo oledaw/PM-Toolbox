@@ -612,6 +612,15 @@
   .card:nth-child(5) { animation-delay: 0.10s; }
   .card:nth-child(6) { animation-delay: 0.12s; }
 
+  /* Clickable table rows */
+  .list-table tbody tr {
+    cursor: pointer;
+    transition: background 0.12s;
+  }
+  .list-table tbody tr:hover td {
+    background: var(--jira-blue-light);
+  }
+
   @media (max-width: 900px) {
     .sidebar { display: none; }
     .main { padding: 12px; width: 100%; min-width: 0; }
@@ -626,6 +635,8 @@
     .topnav-badge { font-size: 10px; white-space: nowrap; }
     .page-header { flex-direction: column; gap: 10px; }
     .header-actions { align-self: flex-end; }
+    .list-table th:last-child,
+    .list-table td:last-child { display: none; }
     .list-table th:nth-child(3), .list-table td:nth-child(3) { display: none; }
   }
 </style>
@@ -697,9 +708,13 @@
         <div class="page-subtitle">Zestawienie narzędzi wspierających zarządzanie projektami IT</div>
       </div>
       <div class="header-actions">
+        <div class="search-input">
+            <span class="icon">🔍</span>
+            <input type="text" id="search-input" placeholder="Szukaj narzędzia..." oninput="filterSearch(this.value)">
+        </div>
         <div class="view-toggle">
-          <button class="view-btn active" id="grid-btn" onclick="setView('grid')" title="Widok kafelków">⊞</button>
-          <button class="view-btn" id="list-btn" onclick="setView('list')" title="Widok listy">☰</button>
+          <button class="view-btn" id="grid-btn" onclick="setView('grid')" title="Widok kafelków">⊞</button>
+          <button class="view-btn active" id="list-btn" onclick="setView('list')" title="Widok listy">☰</button>
         </div>
       </div>
     </div>
@@ -738,10 +753,6 @@
 
     <!-- FILTER BAR -->
     <div class="filter-bar">
-      <div class="search-input">
-        <span class="icon">🔍</span>
-        <input type="text" id="search-input" placeholder="Szukaj narzędzia..." oninput="filterSearch(this.value)">
-      </div>
       <button class="filter-chip active" onclick="filterCategory('all', this)">Wszystkie</button>
       <button class="filter-chip" onclick="filterCategory('portfolio', this)">Portfolio</button>
       <button class="filter-chip" onclick="filterCategory('status', this)">Status</button>
@@ -751,7 +762,7 @@
     </div>
 
     <!-- GRID VIEW -->
-    <div class="cards-grid visible" id="grid-view">
+    <div class="cards-grid" id="grid-view">
 
       <!-- Card 1 -->
       <div class="card" data-category="portfolio" data-type="dashboard" data-title="IT Portfolio Decision Dashboard">
@@ -964,7 +975,7 @@
     </div>
 
     <!-- LIST VIEW -->
-    <div class="list-view" id="list-view">
+    <div class="list-view visible" id="list-view">
       <table class="list-table">
         <thead>
           <tr>
@@ -975,7 +986,7 @@
           </tr>
         </thead>
         <tbody id="list-body">
-          <tr data-category="portfolio" data-type="dashboard" data-title="IT Portfolio Decision Dashboard">
+          <tr data-url="https://oledaw.github.io/projectdashboard/" onclick="rowClick(this)" data-category="portfolio" data-type="dashboard" data-title="IT Portfolio Decision Dashboard">
             <td>
               <div class="list-tool-name">
                 <div class="list-icon blue" style="background:var(--jira-blue-light)">📊</div>
@@ -989,7 +1000,7 @@
             <td style="color:var(--text-secondary);font-size:12px">Strategia · Koszty · ROI · Portfolio</td>
             <td><a class="open-btn" href="https://oledaw.github.io/projectdashboard/" target="_blank" rel="noopener">Uruchom</a></td>
           </tr>
-          <tr data-category="status" data-type="dashboard" data-title="Project Summary Dashboard">
+          <tr data-url="https://oledaw.github.io/project-status-dashboard-generator/" onclick="rowClick(this)" data-category="status" data-type="dashboard" data-title="Project Summary Dashboard">
             <td>
               <div class="list-tool-name">
                 <div class="list-icon green" style="background:var(--green-light)">✅</div>
@@ -1003,7 +1014,7 @@
             <td style="color:var(--text-secondary);font-size:12px">RAG Status · Trend · Ryzyka · Daty</td>
             <td><a class="open-btn" href="https://oledaw.github.io/project-status-dashboard-generator/" target="_blank" rel="noopener">Uruchom</a></td>
           </tr>
-          <tr data-category="assessment" data-type="survey" data-title="Ankieta oceny nieprzewidywalności projektu">
+          <tr data-url="https://oledaw.github.io/project-predictability-assessment/" onclick="rowClick(this)" data-category="assessment" data-type="survey" data-title="Ankieta oceny nieprzewidywalności projektu">
             <td>
               <div class="list-tool-name">
                 <div class="list-icon amber" style="background:var(--amber-light)">🔮</div>
@@ -1017,7 +1028,7 @@
             <td style="color:var(--text-secondary);font-size:12px">Zakres · Tech · Zależności · Zespół</td>
             <td><a class="open-btn" href="https://oledaw.github.io/project-predictability-assessment/" target="_blank" rel="noopener">Uruchom</a></td>
           </tr>
-          <tr data-category="status" data-type="survey" data-title="Ankieta Status tygodniowy projektu">
+          <tr data-url="https://oledaw.github.io/projectweeklystatus/" onclick="rowClick(this)" data-category="status" data-type="survey" data-title="Ankieta Status tygodniowy projektu">
             <td>
               <div class="list-tool-name">
                 <div class="list-icon green" style="background:var(--green-light)">📋</div>
@@ -1031,7 +1042,7 @@
             <td style="color:var(--text-secondary);font-size:12px">Postęp · Zakres · Ryzyka · Zespół</td>
             <td><a class="open-btn" href="https://oledaw.github.io/projectweeklystatus/" target="_blank" rel="noopener">Uruchom</a></td>
           </tr>
-          <tr data-category="assessment" data-type="dashboard" data-title="Project Readiness Assessment">
+          <tr data-url="https://oledaw.github.io/project-readiness-check/" onclick="rowClick(this)" data-category="assessment" data-type="dashboard" data-title="Project Readiness Assessment">
             <td>
               <div class="list-tool-name">
                 <div class="list-icon purple" style="background:var(--purple-light)">🚀</div>
@@ -1045,7 +1056,7 @@
             <td style="color:var(--text-secondary);font-size:12px">Strategia · Zakres · Governance · Plan</td>
             <td><a class="open-btn" href="https://oledaw.github.io/project-readiness-check/" target="_blank" rel="noopener">Uruchom</a></td>
           </tr>
-          <tr data-category="risk" data-type="register" data-title="Risk Register">
+          <tr data-url="https://oledaw.github.io/riskregister/" onclick="rowClick(this)" data-category="risk" data-type="register" data-title="Risk Register">
             <td>
               <div class="list-tool-name">
                 <div class="list-icon red" style="background:var(--red-light)">⚠️</div>
@@ -1059,7 +1070,7 @@
             <td style="color:var(--text-secondary);font-size:12px">Ryzyko · Mitygacja · Konsekwencje</td>
             <td><a class="open-btn" href="https://oledaw.github.io/riskregister/" target="_blank" rel="noopener">Uruchom</a></td>
           </tr>
-          <tr data-category="process" data-type="register" data-title="Happy Path Builder">
+          <tr data-url="https://oledaw.github.io/happy-path-builder/" onclick="rowClick(this)" data-category="process" data-type="register" data-title="Happy Path Builder">
             <td>
               <div class="list-tool-name">
                 <div class="list-icon teal" style="background:var(--teal-light)">🔗</div>
@@ -1086,7 +1097,12 @@
 </div>
 
 <script>
-  let currentView = 'grid';
+  let currentView = 'list';
+
+  function rowClick(row) {
+    const url = row.dataset.url;
+    if (url) window.open(url, '_blank', 'noopener');
+  }
   let currentCategory = 'all';
   let currentSearch = '';
 
