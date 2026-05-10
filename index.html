@@ -972,6 +972,53 @@
         </div>
       </div>
 
+      <!-- Card 8 -->
+
+      <div class="card" data-category="process" data-type="register" data-title="Scope Modeler">
+        <div class="card-accent teal"></div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-icon teal">🗺️</div>
+            <div class="card-title-block">
+              <div class="card-title">Scope Modeler</div>
+              <div class="card-key">PMT-008 · Proces</div>
+            </div>
+          </div>
+          <div class="card-desc">
+            Narzędzie do modelowania zakresu projektu w formacie Happy Path
+            oraz epik → user story → kryteria akceptacji. Dane importowane
+            z&nbsp;JSON, edytowalne w&nbsp;UI, eksportowane z&nbsp;powrotem
+            do&nbsp;pliku. Agreguje pytania otwarte z&nbsp;całego zakresu
+            w&nbsp;jednym widoku.
+          </div>
+          <div class="card-areas">
+            <span class="area-tag">✅ Happy Path</span>
+            <span class="area-tag">🗂 Epiki</span>
+            <span class="area-tag">📖 User Stories</span>
+            <span class="area-tag">🎯 Kryteria akceptacji</span>
+            <span class="area-tag">⚠️ Pytania otwarte</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-type-badge badge-process">🗺️ Proces</span>
+            <a class="open-btn" href="https://oledaw.github.io/Project-Scope-Modeler/" target="_blank" rel="noopener">
+              Uruchom
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+---
+
+Zmiany względem oryginału:
+
+| Element | Przed | Po |
+|---|---|---|
+| `card-icon` | 🔗 | 🗺️ — lepiej oddaje modelowanie procesu |
+| `card-desc` | Jedno ogólne zdanie | Trzy zdania opisujące konkretne funkcje narzędzia |
+| `area-tag` | Aktorzy / Rezultaty / Proces / Happy Path | Happy Path / Epiki / User Stories / Kryteria akceptacji / Pytania otwarte — odzwierciedlają rzeczywiste sekcje UI |
+| `card-type-badge` ikona | 🔗 | 🗺️ — spójnie z ikoną karty |
+
     </div>
 
     <!-- LIST VIEW -->
@@ -1083,6 +1130,20 @@
             <td><span class="card-type-badge badge-process">🔗 Proces</span></td>
             <td style="color:var(--text-secondary);font-size:12px">Aktorzy · Rezultaty · Proces</td>
             <td><a class="open-btn" href="https://oledaw.github.io/happy-path-builder/" target="_blank" rel="noopener">Uruchom</a></td>
+          </tr>
+          <tr data-url="https://oledaw.github.io/happy-path-builder/" onclick="rowClick(this)" data-category="process" data-type="register" data-title="Scope Modeler">
+            <td>
+              <div class="list-tool-name">
+                <div class="list-icon teal" style="background:var(--teal-light)">🗺️</div>
+                <div>
+                  <div class="list-title">Scope Modeler</div>
+                  <div style="font-size:11px;color:var(--text-muted);font-family:monospace">PMT-008</div>
+                </div>
+              </div>
+            </td>
+            <td><span class="card-type-badge badge-process">🗺️ Proces</span></td>
+            <td style="color:var(--text-secondary);font-size:12px">Happy Path · Epiki · User Stories · AC · Pytania otwarte</td>
+            <td><a class="open-btn" href="https://oledaw.github.io/Project-Scope-Modeler/" target="_blank" rel="noopener">Uruchom</a></td>
           </tr>
         </tbody>
       </table>
