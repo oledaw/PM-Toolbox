@@ -15,6 +15,8 @@ Zestaw narzędzi online dla Project Managerów pracujących w środowiskach IT. 
 | 5 | **Project Readiness Assessment** | Interaktywna ocena gotowości projektu do startu w 5 obszarach | [Otwórz](https://oledaw.github.io/project-readiness-check/) |
 | 6 | **Risk Register** | Żywy rejestr ryzyk dla PM i Project Ownera — opis, konsekwencje, mitygacja, obszary wpływu | [Otwórz](https://oledaw.github.io/riskregister/) |
 | 7 | **Happy Path Builder** | Dokumentowanie optymalnej ścieżki procesu — aktorzy, rezultaty, przebieg | [Otwórz](https://oledaw.github.io/happy-path-builder/) |
+| 8 | **Scope Modeler** | Holistyczna analiza zakresu projektu | [Otwórz](https://oledaw.github.io/Project-Scope-Modeler/) |
+
 
 ---
 
