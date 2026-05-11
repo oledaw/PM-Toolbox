@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PM Toolbox</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg" />       
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link href="https://fonts.googleapis.com/css2?family=Charlie+Display:wght@400;600;700&family=Charlie+Text:wght@400;500&display=swap" rel="stylesheet">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="b3f1f00b-bb9b-4eea-be0a-107d88032ca5"></script>
-<script data-goatcounter="https://oledaw.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://oledaw.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
   :root {
     --jira-blue: #0052CC;
@@ -43,11 +42,7 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html, body {
-    overflow-x: hidden;
-    width: 100%;
-  }
+  html, body { overflow-x: hidden; width: 100%; }
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
@@ -57,7 +52,6 @@
     min-height: 100vh;
   }
 
-  /* TOP NAV */
   .topnav {
     background: var(--nav-bg);
     height: 48px;
@@ -66,9 +60,7 @@
     padding: 0 16px;
     gap: 8px;
     position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     width: 100%;
     z-index: 100;
     box-shadow: 0 1px 0 rgba(0,0,0,.2);
@@ -76,389 +68,150 @@
   }
 
   .topnav-logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: white;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: -0.2px;
-    text-decoration: none;
-    padding: 6px 8px;
-    border-radius: var(--radius);
+    display: flex; align-items: center; gap: 8px;
+    color: white; font-weight: 700; font-size: 15px;
+    letter-spacing: -0.2px; text-decoration: none;
+    padding: 6px 8px; border-radius: var(--radius);
     transition: background 0.15s;
   }
   .topnav-logo:hover { background: rgba(255,255,255,0.12); }
-
   .topnav-logo-icon {
     width: 28px; height: 28px;
-    background: white;
-    border-radius: var(--radius);
+    background: white; border-radius: var(--radius);
     display: flex; align-items: center; justify-content: center;
-    color: var(--jira-blue-mid);
-    font-size: 16px;
-    font-weight: 900;
+    color: var(--jira-blue-mid); font-size: 16px; font-weight: 900;
   }
-
-  .topnav-divider {
-    width: 1px; height: 24px;
-    background: rgba(255,255,255,0.2);
-    margin: 0 4px;
-  }
-
-  .topnav-crumb {
-    color: rgba(255,255,255,0.8);
-    font-size: 13px;
-    display: flex; align-items: center; gap: 6px;
-  }
+  .topnav-divider { width: 1px; height: 24px; background: rgba(255,255,255,0.2); margin: 0 4px; }
+  .topnav-crumb { color: rgba(255,255,255,0.8); font-size: 13px; display: flex; align-items: center; gap: 6px; }
   .topnav-crumb span { opacity: 0.6; }
-
   .topnav-spacer { flex: 1; }
-
   .topnav-badge {
-    background: rgba(255,255,255,0.15);
-    color: white;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 10px;
-    letter-spacing: 0.3px;
+    background: rgba(255,255,255,0.15); color: white;
+    font-size: 11px; font-weight: 600; padding: 2px 8px;
+    border-radius: 10px; letter-spacing: 0.3px;
   }
 
-  /* LAYOUT */
-  .layout {
-    display: flex;
-    min-height: calc(100vh - 48px);
-  }
+  .layout { display: flex; min-height: calc(100vh - 48px); }
 
-  /* SIDEBAR */
   .sidebar {
-    width: 240px;
-    background: var(--sidebar-bg);
+    width: 240px; background: var(--sidebar-bg);
     border-right: 1px solid var(--border);
-    padding: 16px 0;
-    flex-shrink: 0;
-    position: sticky;
-    top: 48px;
-    height: calc(100vh - 48px);
-    overflow-y: auto;
+    padding: 16px 0; flex-shrink: 0;
+    position: sticky; top: 48px;
+    height: calc(100vh - 48px); overflow-y: auto;
   }
 
-  .sidebar-section {
-    margin-bottom: 8px;
-  }
-
+  .sidebar-section { margin-bottom: 8px; }
   .sidebar-label {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    padding: 8px 16px 4px;
+    font-size: 11px; font-weight: 600; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.8px; padding: 8px 16px 4px;
   }
-
   .sidebar-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 7px 16px;
-    cursor: pointer;
-    color: var(--text-secondary);
-    font-size: 13px;
-    font-weight: 500;
-    border-radius: 0;
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 16px; cursor: pointer;
+    color: var(--text-secondary); font-size: 13px; font-weight: 500;
     transition: background 0.1s, color 0.1s;
-    text-decoration: none;
-    border-left: 2px solid transparent;
+    text-decoration: none; border-left: 2px solid transparent;
   }
-  .sidebar-item:hover {
-    background: rgba(9,30,66,.06);
-    color: var(--text-primary);
-  }
+  .sidebar-item:hover { background: rgba(9,30,66,.06); color: var(--text-primary); }
   .sidebar-item.active {
-    background: var(--jira-blue-light);
-    color: var(--jira-blue);
-    border-left-color: var(--jira-blue);
-    font-weight: 600;
+    background: var(--jira-blue-light); color: var(--jira-blue);
+    border-left-color: var(--jira-blue); font-weight: 600;
   }
   .sidebar-item .icon { font-size: 15px; width: 18px; text-align: center; }
   .sidebar-item .count {
-    margin-left: auto;
-    background: var(--tag-bg);
-    color: var(--tag-text);
-    font-size: 10px;
-    font-weight: 700;
-    padding: 1px 6px;
-    border-radius: 10px;
+    margin-left: auto; background: var(--tag-bg); color: var(--tag-text);
+    font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 10px;
   }
-  .sidebar-item.active .count {
-    background: var(--jira-blue);
-    color: white;
-  }
+  .sidebar-item.active .count { background: var(--jira-blue); color: white; }
 
-  /* MAIN CONTENT */
-  .main {
-    flex: 1;
-    padding: 24px 32px;
-    max-width: 1200px;
-  }
+  .main { flex: 1; padding: 24px 32px; max-width: 1200px; }
 
   .page-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; justify-content: space-between;
+    margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border);
   }
-
-  .page-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--text-primary);
-    letter-spacing: -0.3px;
-  }
-
-  .page-subtitle {
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin-top: 3px;
-  }
-
-  .header-actions {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    border-radius: var(--radius);
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    border: none;
-    transition: all 0.15s;
-    text-decoration: none;
-  }
-  .btn-primary {
-    background: var(--jira-blue);
-    color: white;
-  }
-  .btn-primary:hover { background: var(--jira-blue-hover); }
-
-  .btn-secondary {
-    background: var(--tag-bg);
-    color: var(--text-primary);
-  }
-  .btn-secondary:hover { background: #EBECF0; filter: brightness(0.95); }
-
-  /* FILTER BAR */
-  .filter-bar {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 20px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+  .page-title { font-size: 20px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.3px; }
+  .page-subtitle { font-size: 13px; color: var(--text-secondary); margin-top: 3px; }
+  .header-actions { display: flex; gap: 8px; align-items: center; }
 
   .search-input {
-    display: flex;
-    align-items: center;
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 5px 10px;
-    gap: 6px;
-    flex: 1;
-    max-width: 320px;
+    display: flex; align-items: center;
+    background: white; border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 5px 10px; gap: 6px;
+    flex: 1; max-width: 320px;
   }
-  .search-input:focus-within {
-    border-color: var(--jira-blue);
-    box-shadow: 0 0 0 2px var(--jira-blue-light);
-  }
-  .search-input input {
-    border: none;
-    outline: none;
-    font-size: 13px;
-    color: var(--text-primary);
-    width: 100%;
-    background: transparent;
-  }
+  .search-input:focus-within { border-color: var(--jira-blue); box-shadow: 0 0 0 2px var(--jira-blue-light); }
+  .search-input input { border: none; outline: none; font-size: 13px; color: var(--text-primary); width: 100%; background: transparent; }
   .search-input .icon { color: var(--text-muted); font-size: 13px; }
 
+  .filter-bar { display: flex; gap: 8px; margin-bottom: 20px; align-items: center; flex-wrap: wrap; }
   .filter-chip {
-    padding: 5px 10px;
-    border-radius: 14px;
-    font-size: 12px;
-    font-weight: 500;
-    cursor: pointer;
-    border: 1px solid var(--border);
-    background: white;
-    color: var(--text-secondary);
-    transition: all 0.15s;
+    padding: 5px 10px; border-radius: 14px; font-size: 12px; font-weight: 500;
+    cursor: pointer; border: 1px solid var(--border); background: white;
+    color: var(--text-secondary); transition: all 0.15s;
   }
-  .filter-chip:hover, .filter-chip.active {
-    background: var(--jira-blue-light);
-    border-color: var(--jira-blue);
-    color: var(--jira-blue);
-  }
+  .filter-chip:hover, .filter-chip.active { background: var(--jira-blue-light); border-color: var(--jira-blue); color: var(--jira-blue); }
 
-  .view-toggle {
-    display: flex;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    margin-left: auto;
-  }
-  .view-btn {
-    padding: 5px 10px;
-    background: white;
-    border: none;
-    cursor: pointer;
-    color: var(--text-secondary);
-    font-size: 14px;
-    transition: all 0.15s;
-  }
+  .view-toggle { display: flex; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-left: auto; }
+  .view-btn { padding: 5px 10px; background: white; border: none; cursor: pointer; color: var(--text-secondary); font-size: 14px; transition: all 0.15s; }
   .view-btn:hover { background: var(--sidebar-bg); }
-  .view-btn.active {
-    background: var(--jira-blue);
-    color: white;
-  }
+  .view-btn.active { background: var(--jira-blue); color: white; }
 
-  /* CARDS GRID */
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 16px;
-  }
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
 
   .card {
-    background: var(--card-bg);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
-    transition: box-shadow 0.2s, transform 0.2s;
-    cursor: pointer;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    background: var(--card-bg); border-radius: var(--radius-lg);
+    box-shadow: var(--shadow); transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer; overflow: hidden; display: flex; flex-direction: column;
     border: 1px solid var(--border);
+    animation: fadeIn 0.2s ease forwards;
   }
-  .card:hover {
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-1px);
-  }
+  .card:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
 
-  .card-accent {
-    height: 4px;
-    background: var(--jira-blue);
-  }
-  .card-accent.green { background: var(--green); }
-  .card-accent.amber { background: var(--amber); }
-  .card-accent.purple { background: var(--purple); }
-  .card-accent.teal { background: var(--teal); }
-  .card-accent.red { background: var(--red); }
-  .card-accent.blue { background: var(--jira-blue); }
+  .card-accent { height: 4px; }
+  .accent-blue { background: var(--jira-blue); }
+  .accent-green { background: var(--green); }
+  .accent-amber { background: var(--amber); }
+  .accent-purple { background: var(--purple); }
+  .accent-teal { background: var(--teal); }
+  .accent-red { background: var(--red); }
 
-  .card-body {
-    padding: 16px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .card-header-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 10px;
-  }
+  .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+  .card-header-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
 
   .card-icon {
-    width: 36px; height: 36px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-    margin-top: 1px;
+    width: 36px; height: 36px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0; margin-top: 1px;
   }
-  .card-icon.green { background: var(--green-light); }
-  .card-icon.amber { background: var(--amber-light); }
-  .card-icon.purple { background: var(--purple-light); }
-  .card-icon.teal { background: var(--teal-light); }
-  .card-icon.red { background: var(--red-light); }
-  .card-icon.blue { background: var(--jira-blue-light); }
+  .icon-blue { background: var(--jira-blue-light); }
+  .icon-green { background: var(--green-light); }
+  .icon-amber { background: var(--amber-light); }
+  .icon-purple { background: var(--purple-light); }
+  .icon-teal { background: var(--teal-light); }
+  .icon-red { background: var(--red-light); }
 
   .card-title-block { flex: 1; }
-
-  .card-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.3;
-    margin-bottom: 2px;
-  }
-
-  .card-key {
-    font-size: 11px;
-    color: var(--text-muted);
-    font-weight: 500;
-    font-family: monospace;
-    letter-spacing: 0.3px;
-  }
-
-  .card-desc {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: 14px;
-    flex: 1;
-  }
-
-  .card-areas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-bottom: 14px;
-  }
-
+  .card-title { font-size: 14px; font-weight: 600; color: var(--text-primary); line-height: 1.3; margin-bottom: 2px; }
+  .card-key { font-size: 11px; color: var(--text-muted); font-weight: 500; font-family: monospace; letter-spacing: 0.3px; }
+  .card-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 14px; flex: 1; }
+  .card-areas { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 14px; }
   .area-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    background: var(--tag-bg);
-    color: var(--tag-text);
-    font-size: 11px;
-    font-weight: 500;
-    padding: 2px 7px;
-    border-radius: 3px;
-    white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 4px;
+    background: var(--tag-bg); color: var(--tag-text);
+    font-size: 11px; font-weight: 500; padding: 2px 7px; border-radius: 3px; white-space: nowrap;
   }
 
   .card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 12px;
-    border-top: 1px solid var(--border);
-    margin-top: auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 12px; border-top: 1px solid var(--border); margin-top: auto;
   }
 
   .card-type-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 3px;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 3px;
+    text-transform: uppercase; letter-spacing: 0.4px;
   }
   .badge-decision { background: var(--jira-blue-light); color: var(--jira-blue-mid); }
   .badge-status { background: var(--green-light); color: var(--green); }
@@ -468,161 +221,55 @@
   .badge-process { background: var(--teal-light); color: #006B7A; }
 
   .open-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    background: var(--jira-blue);
-    color: white;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 5px 12px;
-    border-radius: var(--radius);
-    text-decoration: none;
-    transition: background 0.15s;
-    border: none;
-    cursor: pointer;
+    display: inline-flex; align-items: center; gap: 5px;
+    background: var(--jira-blue); color: white;
+    font-size: 12px; font-weight: 600; padding: 5px 12px;
+    border-radius: var(--radius); text-decoration: none;
+    transition: background 0.15s; border: none; cursor: pointer;
   }
   .open-btn:hover { background: var(--jira-blue-hover); }
 
-  /* LIST VIEW */
   .list-view { display: none; }
   .list-view.visible { display: block; }
   .cards-grid.visible { display: grid; }
   .cards-grid:not(.visible) { display: none; }
 
   .list-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border);
+    width: 100%; border-collapse: collapse; background: white;
+    border-radius: var(--radius-lg); overflow: hidden;
+    box-shadow: var(--shadow); border: 1px solid var(--border);
   }
-
   .list-table th {
-    background: var(--sidebar-bg);
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    padding: 10px 16px;
-    text-align: left;
-    border-bottom: 2px solid var(--border);
+    background: var(--sidebar-bg); font-size: 11px; font-weight: 700;
+    color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.6px;
+    padding: 10px 16px; text-align: left; border-bottom: 2px solid var(--border);
   }
-
-  .list-table td {
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--border);
-    font-size: 13px;
-    color: var(--text-primary);
-    vertical-align: middle;
-  }
-
+  .list-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-primary); vertical-align: middle; }
   .list-table tr:last-child td { border-bottom: none; }
-  .list-table tr:hover td { background: rgba(9,30,66,.03); }
+  .list-table tbody tr { cursor: pointer; transition: background 0.12s; }
+  .list-table tbody tr:hover td { background: var(--jira-blue-light); }
 
-  .list-tool-name {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .list-icon {
-    width: 28px; height: 28px;
-    border-radius: 4px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 15px;
-    flex-shrink: 0;
-  }
+  .list-tool-name { display: flex; align-items: center; gap: 10px; }
+  .list-icon { width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
   .list-title { font-weight: 600; color: var(--text-primary); }
 
-  /* STATS BAR */
   .stats-bar {
-    display: flex;
-    gap: 1px;
-    background: var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    margin-bottom: 20px;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
+    display: flex; gap: 1px; background: var(--border);
+    border-radius: var(--radius-lg); overflow: hidden;
+    margin-bottom: 20px; border: 1px solid var(--border); box-shadow: var(--shadow);
   }
-  .stat-item {
-    background: white;
-    padding: 12px 20px;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+  .stat-item { background: white; padding: 12px 20px; flex: 1; display: flex; align-items: center; gap: 10px; }
   .stat-icon { font-size: 20px; }
-  .stat-num {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 11px;
-    color: var(--text-muted);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
+  .stat-num { font-size: 22px; font-weight: 700; color: var(--text-primary); line-height: 1; }
+  .stat-label { font-size: 11px; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
 
-  /* SECTION DIVIDER */
-  .section-divider {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 24px 0 16px;
-  }
-  .section-divider-title {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.7px;
-    white-space: nowrap;
-  }
-  .section-divider-line {
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
-  /* EMPTY STATE */
-  .empty-state {
-    text-align: center;
-    padding: 48px 16px;
-    color: var(--text-muted);
-  }
+  .empty-state { text-align: center; padding: 48px 16px; color: var(--text-muted); }
   .empty-state-icon { font-size: 36px; margin-bottom: 12px; }
   .empty-state-text { font-size: 14px; font-weight: 500; }
 
-  /* ANIMATIONS */
-  .card {
-    animation: fadeIn 0.2s ease forwards;
-  }
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(6px); }
     to { opacity: 1; transform: translateY(0); }
-  }
-  .card:nth-child(1) { animation-delay: 0.02s; }
-  .card:nth-child(2) { animation-delay: 0.04s; }
-  .card:nth-child(3) { animation-delay: 0.06s; }
-  .card:nth-child(4) { animation-delay: 0.08s; }
-  .card:nth-child(5) { animation-delay: 0.10s; }
-  .card:nth-child(6) { animation-delay: 0.12s; }
-
-  /* Clickable table rows */
-  .list-table tbody tr {
-    cursor: pointer;
-    transition: background 0.12s;
-  }
-  .list-table tbody tr:hover td {
-    background: var(--jira-blue-light);
   }
 
   @media (max-width: 900px) {
@@ -634,20 +281,17 @@
     .stats-bar { flex-wrap: wrap; gap: 0; }
     .stat-item { flex: 1 1 50%; min-width: 0; }
     .filter-bar { gap: 6px; }
-    .topnav-crumb { display: none; }
-    .topnav-divider { display: none; }
+    .topnav-crumb, .topnav-divider { display: none; }
     .topnav-badge { font-size: 10px; white-space: nowrap; }
     .page-header { flex-direction: column; gap: 10px; }
     .header-actions { align-self: flex-end; }
-    .list-table th:last-child,
-    .list-table td:last-child { display: none; }
+    .list-table th:last-child, .list-table td:last-child { display: none; }
     .list-table th:nth-child(3), .list-table td:nth-child(3) { display: none; }
   }
 </style>
 </head>
 <body>
 
-<!-- TOP NAV -->
 <nav class="topnav">
   <a class="topnav-logo" href="#">
     <div class="topnav-logo-icon">PM</div>
@@ -655,57 +299,51 @@
   </a>
   <div class="topnav-divider"></div>
   <div class="topnav-crumb">
-    <span>Projects</span>
-    ›
+    <span>Projects</span> ›
     <strong style="color:white">Narzędzia PM</strong>
   </div>
   <div class="topnav-spacer"></div>
-  <div class="topnav-badge">v1.0 · 7 narzędzi</div>
+  <div class="topnav-badge" id="topnav-count">v1.0 · … narzędzi</div>
 </nav>
 
 <div class="layout">
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
     <div class="sidebar-section">
       <div class="sidebar-label">Widoki</div>
-      <a class="sidebar-item active" onclick="filterCategory('all')" href="#">
-        <span class="icon">⊞</span> Wszystkie narzędzia <span class="count">7</span>
+      <a class="sidebar-item active" onclick="filterCategory('all', this)" href="#">
+        <span class="icon">⊞</span> Wszystkie narzędzia <span class="count" id="count-all">0</span>
       </a>
-      <a class="sidebar-item" onclick="filterCategory('portfolio')" href="#">
-        <span class="icon">📊</span> Portfolio <span class="count">1</span>
+      <a class="sidebar-item" onclick="filterCategory('portfolio', this)" href="#">
+        <span class="icon">📊</span> Portfolio <span class="count" id="count-portfolio">0</span>
       </a>
-      <a class="sidebar-item" onclick="filterCategory('status')" href="#">
-        <span class="icon">✅</span> Status & Raport <span class="count">2</span>
+      <a class="sidebar-item" onclick="filterCategory('status', this)" href="#">
+        <span class="icon">✅</span> Status & Raport <span class="count" id="count-status">0</span>
       </a>
-      <a class="sidebar-item" onclick="filterCategory('assessment')" href="#">
-        <span class="icon">📋</span> Ocena projektu <span class="count">2</span>
+      <a class="sidebar-item" onclick="filterCategory('assessment', this)" href="#">
+        <span class="icon">📋</span> Ocena projektu <span class="count" id="count-assessment">0</span>
       </a>
-      <a class="sidebar-item" onclick="filterCategory('risk')" href="#">
-        <span class="icon">⚠️</span> Ryzyko <span class="count">1</span>
+      <a class="sidebar-item" onclick="filterCategory('risk', this)" href="#">
+        <span class="icon">⚠️</span> Ryzyko <span class="count" id="count-risk">0</span>
       </a>
-      <a class="sidebar-item" onclick="filterCategory('process')" href="#">
-        <span class="icon">🔗</span> Procesy <span class="count">1</span>
+      <a class="sidebar-item" onclick="filterCategory('process', this)" href="#">
+        <span class="icon">🔗</span> Procesy <span class="count" id="count-process">0</span>
       </a>
     </div>
-
-    <div class="sidebar-section" style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+    <div class="sidebar-section" style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
       <div class="sidebar-label">Typ narzędzia</div>
-      <a class="sidebar-item" onclick="filterType('dashboard')" href="#">
+      <a class="sidebar-item" onclick="filterType('dashboard', this)" href="#">
         <span class="icon">📈</span> Dashboardy
       </a>
-      <a class="sidebar-item" onclick="filterType('survey')" href="#">
+      <a class="sidebar-item" onclick="filterType('survey', this)" href="#">
         <span class="icon">📝</span> Ankiety
       </a>
-      <a class="sidebar-item" onclick="filterType('register')" href="#">
+      <a class="sidebar-item" onclick="filterType('register', this)" href="#">
         <span class="icon">📌</span> Rejestry
       </a>
     </div>
   </aside>
 
-  <!-- MAIN -->
   <main class="main">
-
     <div class="page-header">
       <div>
         <div class="page-title">PM Toolbox — Narzędzia</div>
@@ -713,8 +351,8 @@
       </div>
       <div class="header-actions">
         <div class="search-input">
-            <span class="icon">🔍</span>
-            <input type="text" id="search-input" placeholder="Szukaj narzędzia..." oninput="filterSearch(this.value)">
+          <span class="icon">🔍</span>
+          <input type="text" id="search-input" placeholder="Szukaj narzędzia..." oninput="filterSearch(this.value)">
         </div>
         <div class="view-toggle">
           <button class="view-btn" id="grid-btn" onclick="setView('grid')" title="Widok kafelków">⊞</button>
@@ -723,40 +361,26 @@
       </div>
     </div>
 
-    <!-- STATS -->
-    <div class="stats-bar">
+    <div class="stats-bar" id="stats-bar">
       <div class="stat-item">
         <div class="stat-icon">🛠️</div>
-        <div>
-          <div class="stat-num">7</div>
-          <div class="stat-label">Narzędzi</div>
-        </div>
+        <div><div class="stat-num" id="stat-total">0</div><div class="stat-label">Narzędzi</div></div>
       </div>
       <div class="stat-item">
         <div class="stat-icon">📝</div>
-        <div>
-          <div class="stat-num">2</div>
-          <div class="stat-label">Ankiety</div>
-        </div>
+        <div><div class="stat-num" id="stat-survey">0</div><div class="stat-label">Ankiety</div></div>
       </div>
       <div class="stat-item">
         <div class="stat-icon">📊</div>
-        <div>
-          <div class="stat-num">3</div>
-          <div class="stat-label">Dashboardy</div>
-        </div>
+        <div><div class="stat-num" id="stat-dashboard">0</div><div class="stat-label">Dashboardy</div></div>
       </div>
       <div class="stat-item">
         <div class="stat-icon">🔗</div>
-        <div>
-          <div class="stat-num">2</div>
-          <div class="stat-label">Inne</div>
-        </div>
+        <div><div class="stat-num" id="stat-other">0</div><div class="stat-label">Inne</div></div>
       </div>
     </div>
 
-    <!-- FILTER BAR -->
-    <div class="filter-bar">
+    <div class="filter-bar" id="filter-bar">
       <button class="filter-chip active" onclick="filterCategory('all', this)">Wszystkie</button>
       <button class="filter-chip" onclick="filterCategory('portfolio', this)">Portfolio</button>
       <button class="filter-chip" onclick="filterCategory('status', this)">Status</button>
@@ -765,254 +389,8 @@
       <button class="filter-chip" onclick="filterCategory('process', this)">Procesy</button>
     </div>
 
-    <!-- GRID VIEW -->
-    <div class="cards-grid" id="grid-view">
+    <div class="cards-grid" id="grid-view"></div>
 
-      <!-- Card 1 -->
-      <div class="card" data-category="portfolio" data-type="dashboard" data-title="IT Portfolio Decision Dashboard">
-        <div class="card-accent blue"></div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <div class="card-icon blue">📊</div>
-            <div class="card-title-block">
-              <div class="card-title">IT Portfolio — Decision Dashboard</div>
-              <div class="card-key">PMT-001 · Dashboard</div>
-            </div>
-          </div>
-          <div class="card-desc">
-            Zarządzanie portfolio projektów IT oparte na świadomych decyzjach. Każdy element przechodzi przez 3 pytania: Dlaczego to robimy? Ile to kosztuje? Co zyskujemy?
-          </div>
-          <div class="card-areas">
-            <span class="area-tag">🎯 Strategia</span>
-            <span class="area-tag">💰 Koszty</span>
-            <span class="area-tag">📈 ROI</span>
-            <span class="area-tag">🗂 Portfolio</span>
-          </div>
-          <div class="card-footer">
-            <span class="card-type-badge badge-decision">📊 Decision</span>
-            <a class="open-btn" href="https://oledaw.github.io/projectdashboard/" target="_blank" rel="noopener">
-              Uruchom
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="card" data-category="status" data-type="dashboard" data-title="Project Summary Dashboard">
-        <div class="card-accent green"></div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <div class="card-icon green">✅</div>
-            <div class="card-title-block">
-              <div class="card-title">Project Summary Dashboard</div>
-              <div class="card-key">PMT-002 · Dashboard</div>
-            </div>
-          </div>
-          <div class="card-desc">
-            Wizualizacja statusu projektu z oceną RAG. Prezentuje score, trend tygodniowy, kluczowe ryzyka, działania i kluczowe daty projektu.
-          </div>
-          <div class="card-areas">
-            <span class="area-tag">🔴 RAG Status</span>
-            <span class="area-tag">📉 Trend</span>
-            <span class="area-tag">⚠️ Ryzyka</span>
-            <span class="area-tag">📅 Daty</span>
-          </div>
-          <div class="card-footer">
-            <span class="card-type-badge badge-status">✅ Status</span>
-            <a class="open-btn" href="https://oledaw.github.io/project-status-dashboard-generator/" target="_blank" rel="noopener">
-              Uruchom
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="card" data-category="assessment" data-type="survey" data-title="Ankieta oceny nieprzewidywalności projektu">
-        <div class="card-accent amber"></div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <div class="card-icon amber">🔮</div>
-            <div class="card-title-block">
-              <div class="card-title">Ocena Nieprzewidywalności Projektu</div>
-              <div class="card-key">PMT-003 · Ankieta</div>
-            </div>
-          </div>
-          <div class="card-desc">
-            Szybka ocena poziomu ryzyka projektu na początku realizacji lub podczas kontroli PMO w sześciu kluczowych obszarach.
-          </div>
-          <div class="card-areas">
-            <span class="area-tag">📋 Zakres</span>
-            <span class="area-tag">⚙️ Technologia</span>
-            <span class="area-tag">🔗 Zależności</span>
-            <span class="area-tag">👥 Zespół</span>
-            <span class="area-tag">📅 Planowanie</span>
-            <span class="area-tag">⚠️ Ryzyko</span>
-          </div>
-          <div class="card-footer">
-            <span class="card-type-badge badge-survey">📝 Ankieta</span>
-            <a class="open-btn" href="https://oledaw.github.io/project-predictability-assessment/" target="_blank" rel="noopener">
-              Uruchom
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="card" data-category="status" data-type="survey" data-title="Ankieta Status tygodniowy projektu">
-        <div class="card-accent green"></div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <div class="card-icon green">📋</div>
-            <div class="card-title-block">
-              <div class="card-title">Status Tygodniowy — Ankieta RAG</div>
-              <div class="card-key">PMT-004 · Ankieta</div>
-            </div>
-          </div>
-          <div class="card-desc">
-            Przygotowanie tygodniowego raportu RAG przed Portfolio Meeting. Zbiera dane z kluczowych obszarów i generuje raport statusu.
-          </div>
-          <div class="card-areas">
-            <span class="area-tag">📋 Postęp prac</span>
-            <span class="area-tag">🗂 Zakres</span>
-            <span class="area-tag">⚠️ Ryzyka</span>
-            <span class="area-tag">👥 Zespół</span>
-            <span class="area-tag">🤝 Stakeholderzy</span>
-            <span class="area-tag">✅ Jakość</span>
-          </div>
-          <div class="card-footer">
-            <span class="card-type-badge badge-survey">📝 Ankieta</span>
-            <a class="open-btn" href="https://oledaw.github.io/projectweeklystatus/" target="_blank" rel="noopener">
-              Uruchom
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="card" data-category="assessment" data-type="survey" data-title="Project Readiness Assessment">
-        <div class="card-accent purple"></div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <div class="card-icon purple">🚀</div>
-            <div class="card-title-block">
-              <div class="card-title">Project Readiness Assessment</div>
-              <div class="card-key">PMT-005 · Assessment</div>
-            </div>
-          </div>
-          <div class="card-desc">
-            Interaktywna ankieta gotowości projektu do startu. Diagnoza stanu projektu przed uruchomieniem realizacji w 5 obszarach kluczowych.
-          </div>
-          <div class="card-areas">
-            <span class="area-tag">🎯 Strategia</span>
-            <span class="area-tag">📋 Zakres</span>
-            <span class="area-tag">🏛 Governance</span>
-            <span class="area-tag">📅 Planowanie</span>
-            <span class="area-tag">📢 Komunikacja</span>
-          </div>
-          <div class="card-footer">
-            <span class="card-type-badge badge-readiness">🚀 Readiness</span>
-            <a class="open-btn" href="https://oledaw.github.io/project-readiness-check/" target="_blank" rel="noopener">
-              Uruchom
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="card" data-category="risk" data-type="register" data-title="Risk Register">
-        <div class="card-accent red"></div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <div class="card-icon red">⚠️</div>
-            <div class="card-title-block">
-              <div class="card-title">Risk Register</div>
-              <div class="card-key">PMT-006 · Rejestr</div>
-            </div>
-          </div>
-          <div class="card-desc">
-            Wspólne zarządzanie ryzykami przez PM i Project Ownera. Żywy dokument — nie raport. Rejestruje opisy, konsekwencje, mitygacje i obszary wpływu.
-          </div>
-          <div class="card-areas">
-            <span class="area-tag">📝 Opis ryzyka</span>
-            <span class="area-tag">💥 Konsekwencje</span>
-            <span class="area-tag">🛡 Mitygacja</span>
-            <span class="area-tag">📌 Obszary</span>
-          </div>
-          <div class="card-footer">
-            <span class="card-type-badge badge-register">⚠️ Rejestr</span>
-            <a class="open-btn" href="https://oledaw.github.io/riskregister/" target="_blank" rel="noopener">
-              Uruchom
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 7 -->
-      <div class="card" data-category="process" data-type="register" data-title="Happy Path Builder">
-        <div class="card-accent teal"></div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <div class="card-icon teal">🔗</div>
-            <div class="card-title-block">
-              <div class="card-title">Happy Path Builder</div>
-              <div class="card-key">PMT-007 · Proces</div>
-            </div>
-          </div>
-          <div class="card-desc">
-            Definiowanie i dokumentowanie Happy Path — optymalnej ścieżki procesu bez błędów i wyjątków. Rejestruje aktorów, rezultaty i przebieg procesu.
-          </div>
-          <div class="card-areas">
-            <span class="area-tag">👤 Aktorzy</span>
-            <span class="area-tag">🎯 Rezultaty</span>
-            <span class="area-tag">🔄 Proces</span>
-            <span class="area-tag">✅ Happy Path</span>
-          </div>
-          <div class="card-footer">
-            <span class="card-type-badge badge-process">🔗 Proces</span>
-            <a class="open-btn" href="https://oledaw.github.io/happy-path-builder/" target="_blank" rel="noopener">
-              Uruchom
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 8 -->
-
-      <div class="card" data-category="process" data-type="register" data-title="Scope Modeler">
-        <div class="card-accent teal"></div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <div class="card-icon teal">🗺️</div>
-            <div class="card-title-block">
-              <div class="card-title">Scope Modeler</div>
-              <div class="card-key">PMT-008 · Proces</div>
-            </div>
-          </div>
-          <div class="card-desc">
-            Narzędzie do modelowania zakresu projektu w formacie Happy Path
-            oraz epik → user story → kryteria akceptacji. Dane importowane
-            z&nbsp;JSON, edytowalne w&nbsp;UI, eksportowane z&nbsp;powrotem
-            do&nbsp;pliku. Agreguje pytania otwarte z&nbsp;całego zakresu
-            w&nbsp;jednym widoku.
-          </div>
-          <div class="card-areas">
-            <span class="area-tag">✅ Happy Path</span>
-            <span class="area-tag">🗂 Epiki</span>
-            <span class="area-tag">📖 User Stories</span>
-            <span class="area-tag">🎯 Kryteria akceptacji</span>
-            <span class="area-tag">⚠️ Pytania otwarte</span>
-          </div>
-          <div class="card-footer">
-            <span class="card-type-badge badge-process">🗺️ Proces</span>
-            <a class="open-btn" href="https://oledaw.github.io/Project-Scope-Modeler/" target="_blank" rel="noopener">
-              Uruchom
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- LIST VIEW -->
     <div class="list-view visible" id="list-view">
       <table class="list-table">
         <thead>
@@ -1023,120 +401,7 @@
             <th style="width:15%">Akcja</th>
           </tr>
         </thead>
-        <tbody id="list-body">
-          <tr data-url="https://oledaw.github.io/projectdashboard/" onclick="rowClick(this)" data-category="portfolio" data-type="dashboard" data-title="IT Portfolio Decision Dashboard">
-            <td>
-              <div class="list-tool-name">
-                <div class="list-icon blue" style="background:var(--jira-blue-light)">📊</div>
-                <div>
-                  <div class="list-title">IT Portfolio — Decision Dashboard</div>
-                  <div style="font-size:11px;color:var(--text-muted);font-family:monospace">PMT-001</div>
-                </div>
-              </div>
-            </td>
-            <td><span class="card-type-badge badge-decision">📊 Decision</span></td>
-            <td style="color:var(--text-secondary);font-size:12px">Strategia · Koszty · ROI · Portfolio</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/projectdashboard/" target="_blank" rel="noopener">Uruchom</a></td>
-          </tr>
-          <tr data-url="https://oledaw.github.io/project-status-dashboard-generator/" onclick="rowClick(this)" data-category="status" data-type="dashboard" data-title="Project Summary Dashboard">
-            <td>
-              <div class="list-tool-name">
-                <div class="list-icon green" style="background:var(--green-light)">✅</div>
-                <div>
-                  <div class="list-title">Project Summary Dashboard</div>
-                  <div style="font-size:11px;color:var(--text-muted);font-family:monospace">PMT-002</div>
-                </div>
-              </div>
-            </td>
-            <td><span class="card-type-badge badge-status">✅ Status</span></td>
-            <td style="color:var(--text-secondary);font-size:12px">RAG Status · Trend · Ryzyka · Daty</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/project-status-dashboard-generator/" target="_blank" rel="noopener">Uruchom</a></td>
-          </tr>
-          <tr data-url="https://oledaw.github.io/project-predictability-assessment/" onclick="rowClick(this)" data-category="assessment" data-type="survey" data-title="Ankieta oceny nieprzewidywalności projektu">
-            <td>
-              <div class="list-tool-name">
-                <div class="list-icon amber" style="background:var(--amber-light)">🔮</div>
-                <div>
-                  <div class="list-title">Ocena Nieprzewidywalności Projektu</div>
-                  <div style="font-size:11px;color:var(--text-muted);font-family:monospace">PMT-003</div>
-                </div>
-              </div>
-            </td>
-            <td><span class="card-type-badge badge-survey">📝 Ankieta</span></td>
-            <td style="color:var(--text-secondary);font-size:12px">Zakres · Tech · Zależności · Zespół</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/project-predictability-assessment/" target="_blank" rel="noopener">Uruchom</a></td>
-          </tr>
-          <tr data-url="https://oledaw.github.io/projectweeklystatus/" onclick="rowClick(this)" data-category="status" data-type="survey" data-title="Ankieta Status tygodniowy projektu">
-            <td>
-              <div class="list-tool-name">
-                <div class="list-icon green" style="background:var(--green-light)">📋</div>
-                <div>
-                  <div class="list-title">Status Tygodniowy — Ankieta RAG</div>
-                  <div style="font-size:11px;color:var(--text-muted);font-family:monospace">PMT-004</div>
-                </div>
-              </div>
-            </td>
-            <td><span class="card-type-badge badge-survey">📝 Ankieta</span></td>
-            <td style="color:var(--text-secondary);font-size:12px">Postęp · Zakres · Ryzyka · Zespół</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/projectweeklystatus/" target="_blank" rel="noopener">Uruchom</a></td>
-          </tr>
-          <tr data-url="https://oledaw.github.io/project-readiness-check/" onclick="rowClick(this)" data-category="assessment" data-type="survey" data-title="Project Readiness Assessment">
-            <td>
-              <div class="list-tool-name">
-                <div class="list-icon purple" style="background:var(--purple-light)">🚀</div>
-                <div>
-                  <div class="list-title">Project Readiness Assessment</div>
-                  <div style="font-size:11px;color:var(--text-muted);font-family:monospace">PMT-005</div>
-                </div>
-              </div>
-            </td>
-            <td><span class="card-type-badge badge-readiness">🚀 Readiness</span></td>
-            <td style="color:var(--text-secondary);font-size:12px">Strategia · Zakres · Governance · Plan</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/project-readiness-check/" target="_blank" rel="noopener">Uruchom</a></td>
-          </tr>
-          <tr data-url="https://oledaw.github.io/riskregister/" onclick="rowClick(this)" data-category="risk" data-type="register" data-title="Risk Register">
-            <td>
-              <div class="list-tool-name">
-                <div class="list-icon red" style="background:var(--red-light)">⚠️</div>
-                <div>
-                  <div class="list-title">Risk Register</div>
-                  <div style="font-size:11px;color:var(--text-muted);font-family:monospace">PMT-006</div>
-                </div>
-              </div>
-            </td>
-            <td><span class="card-type-badge badge-register">⚠️ Rejestr</span></td>
-            <td style="color:var(--text-secondary);font-size:12px">Ryzyko · Mitygacja · Konsekwencje</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/riskregister/" target="_blank" rel="noopener">Uruchom</a></td>
-          </tr>
-          <tr data-url="https://oledaw.github.io/happy-path-builder/" onclick="rowClick(this)" data-category="process" data-type="register" data-title="Happy Path Builder">
-            <td>
-              <div class="list-tool-name">
-                <div class="list-icon teal" style="background:var(--teal-light)">🔗</div>
-                <div>
-                  <div class="list-title">Happy Path Builder</div>
-                  <div style="font-size:11px;color:var(--text-muted);font-family:monospace">PMT-007</div>
-                </div>
-              </div>
-            </td>
-            <td><span class="card-type-badge badge-process">🔗 Proces</span></td>
-            <td style="color:var(--text-secondary);font-size:12px">Aktorzy · Rezultaty · Proces</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/happy-path-builder/" target="_blank" rel="noopener">Uruchom</a></td>
-          </tr>
-          <tr data-url="https://oledaw.github.io/Project-Scope-Modeler/" onclick="rowClick(this)" data-category="process" data-type="register" data-title="Scope Modeler">
-            <td>
-              <div class="list-tool-name">
-                <div class="list-icon teal" style="background:var(--teal-light)">🗺️</div>
-                <div>
-                  <div class="list-title">Scope Modeler</div>
-                  <div style="font-size:11px;color:var(--text-muted);font-family:monospace">PMT-008</div>
-                </div>
-              </div>
-            </td>
-            <td><span class="card-type-badge badge-process">🗺️ Proces</span></td>
-            <td style="color:var(--text-secondary);font-size:12px">Happy Path · Epiki · User Stories · AC · Pytania otwarte</td>
-            <td><a class="open-btn" href="https://oledaw.github.io/Project-Scope-Modeler/" target="_blank" rel="noopener">Uruchom</a></td>
-          </tr>
-        </tbody>
+        <tbody id="list-body"></tbody>
       </table>
     </div>
 
@@ -1144,110 +409,293 @@
       <div class="empty-state-icon">🔍</div>
       <div class="empty-state-text">Brak narzędzi spełniających kryteria wyszukiwania</div>
     </div>
-
   </main>
 </div>
 
 <script>
-  let currentView = 'list';
+// =============================================================
+//  ★  TUTAJ DODAJESZ NOWE NARZĘDZIA  ★
+//
+//  Skopiuj dowolny obiekt, zmień wartości i gotowe.
+//  Kolory dostępne: blue | green | amber | purple | teal | red
+//  Kategorie:       portfolio | status | assessment | risk | process
+//  Typy:            dashboard | survey | register
+//  Badge:           decision | status | survey | readiness | register | process
+// =============================================================
 
-  function rowClick(row) {
-    const url = row.dataset.url;
-    if (url) window.open(url, '_blank', 'noopener');
+const TOOLS = [
+  {
+    id: "PMT-001",
+    title: "IT Portfolio — Decision Dashboard",
+    description: "Zarządzanie portfolio projektów IT oparte na świadomych decyzjach. Każdy element przechodzi przez 3 pytania: Dlaczego to robimy? Ile to kosztuje? Co zyskujemy?",
+    icon: "📊",
+    color: "blue",
+    category: "portfolio",
+    type: "dashboard",
+    badge: "decision",
+    badgeLabel: "📊 Decision",
+    tags: ["🎯 Strategia", "💰 Koszty", "📈 ROI", "🗂 Portfolio"],
+    url: "https://oledaw.github.io/projectdashboard/"
+  },
+  {
+    id: "PMT-002",
+    title: "Project Summary Dashboard",
+    description: "Wizualizacja statusu projektu z oceną RAG. Prezentuje score, trend tygodniowy, kluczowe ryzyka, działania i kluczowe daty projektu.",
+    icon: "✅",
+    color: "green",
+    category: "status",
+    type: "dashboard",
+    badge: "status",
+    badgeLabel: "✅ Status",
+    tags: ["🔴 RAG Status", "📉 Trend", "⚠️ Ryzyka", "📅 Daty"],
+    url: "https://oledaw.github.io/project-status-dashboard-generator/"
+  },
+  {
+    id: "PMT-003",
+    title: "Ocena Nieprzewidywalności Projektu",
+    description: "Szybka ocena poziomu ryzyka projektu na początku realizacji lub podczas kontroli PMO w sześciu kluczowych obszarach.",
+    icon: "🔮",
+    color: "amber",
+    category: "assessment",
+    type: "survey",
+    badge: "survey",
+    badgeLabel: "📝 Ankieta",
+    tags: ["📋 Zakres", "⚙️ Technologia", "🔗 Zależności", "👥 Zespół", "📅 Planowanie", "⚠️ Ryzyko"],
+    url: "https://oledaw.github.io/project-predictability-assessment/"
+  },
+  {
+    id: "PMT-004",
+    title: "Status Tygodniowy — Ankieta RAG",
+    description: "Przygotowanie tygodniowego raportu RAG przed Portfolio Meeting. Zbiera dane z kluczowych obszarów i generuje raport statusu.",
+    icon: "📋",
+    color: "green",
+    category: "status",
+    type: "survey",
+    badge: "survey",
+    badgeLabel: "📝 Ankieta",
+    tags: ["📋 Postęp prac", "🗂 Zakres", "⚠️ Ryzyka", "👥 Zespół", "🤝 Stakeholderzy", "✅ Jakość"],
+    url: "https://oledaw.github.io/projectweeklystatus/"
+  },
+  {
+    id: "PMT-005",
+    title: "Project Readiness Assessment",
+    description: "Interaktywna ankieta gotowości projektu do startu. Diagnoza stanu projektu przed uruchomieniem realizacji w 5 obszarach kluczowych.",
+    icon: "🚀",
+    color: "purple",
+    category: "assessment",
+    type: "survey",
+    badge: "readiness",
+    badgeLabel: "🚀 Readiness",
+    tags: ["🎯 Strategia", "📋 Zakres", "🏛 Governance", "📅 Planowanie", "📢 Komunikacja"],
+    url: "https://oledaw.github.io/project-readiness-check/"
+  },
+  {
+    id: "PMT-006",
+    title: "Risk Register",
+    description: "Wspólne zarządzanie ryzykami przez PM i Project Ownera. Żywy dokument — nie raport. Rejestruje opisy, konsekwencje, mitygacje i obszary wpływu.",
+    icon: "⚠️",
+    color: "red",
+    category: "risk",
+    type: "register",
+    badge: "register",
+    badgeLabel: "⚠️ Rejestr",
+    tags: ["📝 Opis ryzyka", "💥 Konsekwencje", "🛡 Mitygacja", "📌 Obszary"],
+    url: "https://oledaw.github.io/riskregister/"
+  },
+  {
+    id: "PMT-007",
+    title: "Happy Path Builder",
+    description: "Definiowanie i dokumentowanie Happy Path — optymalnej ścieżki procesu bez błędów i wyjątków. Rejestruje aktorów, rezultaty i przebieg procesu.",
+    icon: "🔗",
+    color: "teal",
+    category: "process",
+    type: "register",
+    badge: "process",
+    badgeLabel: "🔗 Proces",
+    tags: ["👤 Aktorzy", "🎯 Rezultaty", "🔄 Proces", "✅ Happy Path"],
+    url: "https://oledaw.github.io/happy-path-builder/"
+  },
+  {
+    id: "PMT-008",
+    title: "Scope Modeler",
+    description: "Narzędzie do modelowania zakresu projektu w formacie Happy Path oraz epik → user story → kryteria akceptacji. Dane importowane z JSON, edytowalne w UI, eksportowane z powrotem do pliku. Agreguje pytania otwarte z całego zakresu w jednym widoku.",
+    icon: "🗺️",
+    color: "teal",
+    category: "process",
+    type: "register",
+    badge: "process",
+    badgeLabel: "🗺️ Proces",
+    tags: ["✅ Happy Path", "🗂 Epiki", "📖 User Stories", "🎯 Kryteria akceptacji", "⚠️ Pytania otwarte"],
+    url: "https://oledaw.github.io/Project-Scope-Modeler/"
   }
-  let currentCategory = 'all';
-  let currentSearch = '';
+];
 
-  function setView(view) {
-    currentView = view;
-    const gridView = document.getElementById('grid-view');
-    const listView = document.getElementById('list-view');
-    const gridBtn = document.getElementById('grid-btn');
-    const listBtn = document.getElementById('list-btn');
+// =============================================================
+//  RENDERER — nie musisz tu nic zmieniać
+// =============================================================
 
-    if (view === 'grid') {
-      gridView.classList.add('visible');
-      listView.classList.remove('visible');
-      gridBtn.classList.add('active');
-      listBtn.classList.remove('active');
-    } else {
-      gridView.classList.remove('visible');
-      listView.classList.add('visible');
-      listBtn.classList.add('active');
-      gridBtn.classList.remove('active');
-    }
-    applyFilters();
-  }
+let currentView = 'list';
+let currentCategory = 'all';
+let currentSearch = '';
 
-  function filterCategory(category, chipEl) {
-    currentCategory = category;
+function buildCard(tool, index) {
+  const tagsHTML = tool.tags.map(t => `<span class="area-tag">${t}</span>`).join('');
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.dataset.category = tool.category;
+  card.dataset.type = tool.type;
+  card.dataset.title = tool.title.toLowerCase();
+  card.dataset.tags = tool.tags.join(' ').toLowerCase();
+  card.dataset.desc = tool.description.toLowerCase();
+  card.style.animationDelay = `${(index % 6) * 0.02}s`;
+  card.innerHTML = `
+    <div class="card-accent accent-${tool.color}"></div>
+    <div class="card-body">
+      <div class="card-header-row">
+        <div class="card-icon icon-${tool.color}">${tool.icon}</div>
+        <div class="card-title-block">
+          <div class="card-title">${tool.title}</div>
+          <div class="card-key">${tool.id} · ${capitalize(tool.type)}</div>
+        </div>
+      </div>
+      <div class="card-desc">${tool.description}</div>
+      <div class="card-areas">${tagsHTML}</div>
+      <div class="card-footer">
+        <span class="card-type-badge badge-${tool.badge}">${tool.badgeLabel}</span>
+        <a class="open-btn" href="${tool.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Uruchom</a>
+      </div>
+    </div>`;
+  return card;
+}
 
-    // Update sidebar items
-    document.querySelectorAll('.sidebar-item').forEach(item => {
-      item.classList.remove('active');
-      if (item.getAttribute('onclick') && item.getAttribute('onclick').includes(`'${category}'`)) {
-        item.classList.add('active');
-      }
-    });
+function buildRow(tool) {
+  const row = document.createElement('tr');
+  row.dataset.category = tool.category;
+  row.dataset.type = tool.type;
+  row.dataset.title = tool.title.toLowerCase();
+  row.dataset.tags = tool.tags.join(' ').toLowerCase();
+  row.addEventListener('click', () => window.open(tool.url, '_blank', 'noopener'));
+  row.innerHTML = `
+    <td>
+      <div class="list-tool-name">
+        <div class="list-icon icon-${tool.color}">${tool.icon}</div>
+        <div>
+          <div class="list-title">${tool.title}</div>
+          <div style="font-size:11px;color:var(--text-muted);font-family:monospace">${tool.id}</div>
+        </div>
+      </div>
+    </td>
+    <td><span class="card-type-badge badge-${tool.badge}">${tool.badgeLabel}</span></td>
+    <td style="color:var(--text-secondary);font-size:12px">${tool.tags.map(t => t.replace(/^\S+\s/, '')).join(' · ')}</td>
+    <td><a class="open-btn" href="${tool.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Uruchom</a></td>`;
+  return row;
+}
 
-    // Update chips
-    if (chipEl) {
-      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-      chipEl.classList.add('active');
-    }
+function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
 
-    applyFilters();
-    return false;
-  }
+function updateStats() {
+  const total = TOOLS.length;
+  const surveys = TOOLS.filter(t => t.type === 'survey').length;
+  const dashboards = TOOLS.filter(t => t.type === 'dashboard').length;
+  const other = total - surveys - dashboards;
 
-  function filterType(type) {
-    // Type filter via sidebar — we reuse category approach but differently
-    currentCategory = 'type:' + type;
-    applyFilters();
-  }
+  document.getElementById('stat-total').textContent = total;
+  document.getElementById('stat-survey').textContent = surveys;
+  document.getElementById('stat-dashboard').textContent = dashboards;
+  document.getElementById('stat-other').textContent = other;
+  document.getElementById('topnav-count').textContent = `v1.0 · ${total} narzędzi`;
 
-  function filterSearch(val) {
-    currentSearch = val.toLowerCase();
-    applyFilters();
-  }
+  const cats = ['portfolio', 'status', 'assessment', 'risk', 'process'];
+  cats.forEach(cat => {
+    const el = document.getElementById('count-' + cat);
+    if (el) el.textContent = TOOLS.filter(t => t.category === cat).length;
+  });
+  document.getElementById('count-all').textContent = total;
+}
 
-  function applyFilters() {
-    const gridCards = document.querySelectorAll('#grid-view .card');
-    const listRows = document.querySelectorAll('#list-body tr');
-    let visibleCount = 0;
+function render() {
+  const grid = document.getElementById('grid-view');
+  const list = document.getElementById('list-body');
+  grid.innerHTML = '';
+  list.innerHTML = '';
 
-    gridCards.forEach(card => {
-      const cat = card.dataset.category;
-      const type = card.dataset.type;
-      const title = card.dataset.title.toLowerCase();
-      const desc = card.querySelector('.card-desc').textContent.toLowerCase();
-      const tags = card.querySelector('.card-areas').textContent.toLowerCase();
+  TOOLS.forEach((tool, i) => {
+    grid.appendChild(buildCard(tool, i));
+    list.appendChild(buildRow(tool));
+  });
 
-      const catMatch = currentCategory === 'all' || cat === currentCategory ||
-        (currentCategory.startsWith('type:') && type === currentCategory.split(':')[1]);
-      const searchMatch = !currentSearch || title.includes(currentSearch) || desc.includes(currentSearch) || tags.includes(currentSearch);
+  updateStats();
+  applyFilters();
+}
 
-      const visible = catMatch && searchMatch;
-      card.style.display = visible ? '' : 'none';
-      if (visible) visibleCount++;
-    });
+function setView(view) {
+  currentView = view;
+  const gridView = document.getElementById('grid-view');
+  const listView = document.getElementById('list-view');
+  document.getElementById('grid-btn').classList.toggle('active', view === 'grid');
+  document.getElementById('list-btn').classList.toggle('active', view === 'list');
+  gridView.classList.toggle('visible', view === 'grid');
+  listView.classList.toggle('visible', view === 'list');
+  applyFilters();
+}
 
-    listRows.forEach(row => {
-      const cat = row.dataset.category;
-      const type = row.dataset.type;
-      const title = row.dataset.title.toLowerCase();
-      const cells = row.textContent.toLowerCase();
+function filterCategory(category, _el) {
+  currentCategory = category;
+  document.querySelectorAll('.sidebar-item').forEach(item => {
+    const oc = item.getAttribute('onclick') || '';
+    item.classList.toggle('active', oc.includes(`'${category}'`));
+  });
+  document.querySelectorAll('.filter-chip').forEach(chip => {
+    const oc = chip.getAttribute('onclick') || '';
+    chip.classList.toggle('active', oc.includes(`'${category}'`));
+  });
+  applyFilters();
+  return false;
+}
 
-      const catMatch = currentCategory === 'all' || cat === currentCategory ||
-        (currentCategory.startsWith('type:') && type === currentCategory.split(':')[1]);
-      const searchMatch = !currentSearch || title.includes(currentSearch) || cells.includes(currentSearch);
+function filterType(type) {
+  currentCategory = 'type:' + type;
+  applyFilters();
+}
 
-      row.style.display = (catMatch && searchMatch) ? '' : 'none';
-    });
+function filterSearch(val) {
+  currentSearch = val.toLowerCase();
+  applyFilters();
+}
 
-    document.getElementById('empty-state').style.display = visibleCount === 0 ? 'block' : 'none';
-  }
+function matchesFilter(el) {
+  const cat = el.dataset.category;
+  const type = el.dataset.type;
+  const title = el.dataset.title || '';
+  const tags = el.dataset.tags || '';
+  const desc = el.dataset.desc || el.textContent.toLowerCase();
+
+  const catMatch = currentCategory === 'all'
+    || cat === currentCategory
+    || (currentCategory.startsWith('type:') && type === currentCategory.split(':')[1]);
+  const searchMatch = !currentSearch
+    || title.includes(currentSearch)
+    || tags.includes(currentSearch)
+    || desc.includes(currentSearch);
+
+  return catMatch && searchMatch;
+}
+
+function applyFilters() {
+  let visible = 0;
+  document.querySelectorAll('#grid-view .card').forEach(el => {
+    const show = matchesFilter(el);
+    el.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  document.querySelectorAll('#list-body tr').forEach(el => {
+    el.style.display = matchesFilter(el) ? '' : 'none';
+  });
+  document.getElementById('empty-state').style.display = visible === 0 ? 'block' : 'none';
+}
+
+// Boot
+render();
 </script>
-
 </body>
 </html>
